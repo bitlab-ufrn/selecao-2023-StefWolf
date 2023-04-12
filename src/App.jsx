@@ -1,10 +1,22 @@
 import { useState } from 'react'
 import { detectBadWord } from './components/DetectBadWord'
-import { Alert } from "@material-tailwind/react";
 import { BiSearchAlt } from "react-icons/bi";
 import ShowAlert from './components/ShowAlert';
+import translate from 'translate';
 
 function App() {
+
+  async function te(){
+    console.log("a")
+    translate.engine= "google";
+
+    const t = await translate("Hello world", { to: "pt"});
+    console.log(t)
+
+  }
+
+  te()
+  
 
   const [text, setText] = useState("");
   const [hasBadWord, setHadBadWord] = useState();
