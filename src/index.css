@@ -1,4 +1,8 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+:root {
+    @apply -bg--background-color;
 }
 
