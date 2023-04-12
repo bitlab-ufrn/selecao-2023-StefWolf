@@ -9,7 +9,6 @@ function App() {
   async function verifyWords(e) {
     e.preventDefault()
     setHadBadWord(await detectBadWord(text))
-    
   }
 
   return (
