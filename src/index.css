@@ -7,14 +7,14 @@
 }
 
 .body {
-    @apply flex justify-center;
+    @apply flex flex-col items-center pt-10 h-screen ;
     @apply w-full;
 }
 
 .form {
     @apply flex flex-col;
-    @apply -bg--background-secondary p-8 w-[45%];
-    @apply rounded-sm;
+    @apply -bg--background-secondary p-8 laptop:w-[45%] w-[90%] h-[150px];
+    @apply rounded-md shadow-lg;
 }
 
 .form__label {
@@ -22,10 +22,17 @@
 }
 
 .form__input {
-    @apply -bg--background-input/50;
+    @apply -bg--background-input/50 -text--text-color border-none h-[100px] rounded-lg p-3;
+    @apply shadow-sm;
 }
 
 .form__button {
+    @apply -bg--background-button hover:-bg--background-button/80 -text--text-color rounded-md ;
+    @apply p-2 transition-all;
+}
 
+h1 {
+    @apply laptop:text-[43px] text-[25px] -text--title-color text-center font-bold mb-8;
+    font-family: 'Courier New', Courier, monospace;
 }
 
