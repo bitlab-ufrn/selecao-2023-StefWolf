@@ -13,17 +13,19 @@ function App() {
 
   return (
     <body>
-      <form onSubmit={verifyWords}>
-        <label>Digite a palavra</label>
-        <input id='text' type='text' name='text' 
+      <form onSubmit={verifyWords} className='form'>
+        <label className='form__label'>Digite a palavra</label>
+        <input className='form__input' id='text' type='text' name='text' 
           onChange={(e) => setText(e.target.value)} required/>
-        <button type='submit'>Verificar</button>
+        <button className='form__button' type='submit'>Verificar</button>
       </form>
+
       { hasBadWord === true ? 
         <span>Tem palavras impróprias</span>
        : hasBadWord === false ? <span>Não tem palavras impróprias</span> : 
         <></>
       }
+
     </body>
   )
 }

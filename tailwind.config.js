@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         '--background-color': '#313338',
+        '--background-secondary': '#6D6F78',
+        '--background-input': '#383A40',
         '--text-color': '#F2F3F5',
         '--title-color': '#DBDEE1',
         '--sucess-color': '#2E8047',

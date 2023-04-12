@@ -6,3 +6,23 @@
     @apply -bg--background-color;
 }
 
+body {
+    @apply flex justify-center;
+}
+
+.form {
+    @apply flex flex-col;
+}
+
+.form__label {
+    @apply -text--text-color ;
+}
+
+.form__input {
+
+}
+
+.form__button {
+
+}
+
