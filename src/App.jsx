@@ -1,16 +1,31 @@
 import { useState } from 'react'
-
 import { detectBadWord } from './components/DetectBadWord'
 
 function App() {
 
-  let result = detectBadWord("caralho")
-  console.log(result)
+  const [text, setText] = useState("");
+  const [hasBadWord, setHadBadWord] = useState();
+
+  async function verifyWords(e) {
+    e.preventDefault()
+    setHadBadWord(await detectBadWord(text))
+    
+  }
 
   return (
-    <div className="App">
-      Hello world
-    </div>
+    <body>
+      <form onSubmit={verifyWords}>
+        <label>Digite a palavra</label>
+        <input id='text' type='text' name='text' 
+          onChange={(e) => setText(e.target.value)} required/>
+        <button type='submit'>Verificar</button>
+      </form>
+      { hasBadWord === true ? 
+        <span>Tem palavras impróprias</span>
+       : hasBadWord === false ? <span>Não tem palavras impróprias</span> : 
+        <></>
+      }
+    </body>
   )
 }
 
