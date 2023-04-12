@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <body>
+    <body className='body'>
       <form onSubmit={verifyWords} className='form'>
         <label className='form__label'>Digite a palavra</label>
         <input className='form__input' id='text' type='text' name='text' 

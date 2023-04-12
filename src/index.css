@@ -6,20 +6,23 @@
     @apply -bg--background-color;
 }
 
-body {
+.body {
     @apply flex justify-center;
+    @apply w-full;
 }
 
 .form {
     @apply flex flex-col;
+    @apply -bg--background-secondary p-8 w-[45%];
+    @apply rounded-sm;
 }
 
 .form__label {
-    @apply -text--text-color ;
+    @apply -text--text-color;
 }
 
 .form__input {
-
+    @apply -bg--background-input/50;
 }
 
 .form__button {
