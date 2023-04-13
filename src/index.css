@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 :root {
-    @apply -bg--background-color;
 }
 
 .body {
-    @apply flex flex-col items-center pt-10 h-screen ;
+    @apply flex flex-col items-center pt-5 h-screen ;
     @apply w-full;
+    @apply dark:-bg--background-color -bg--background-color-l transition-all;
 }
 
 .form {
     @apply flex flex-col;
-    @apply -bg--background-secondary p-8 laptop:w-[45%] w-[90%] h-[150px];
+    @apply dark:-bg--background-secondary -bg--background-secondary/20 p-8 laptop:w-[45%] w-[90%] h-[150px];
     @apply rounded-md shadow-lg;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .form__input {
-    @apply -bg--background-input/50 -text--text-color border-none h-[100px] rounded-lg p-3;
+    @apply dark:-bg--background-input/80 dark:-text--text-color border-none h-[100px] rounded-lg p-3;
     @apply shadow-sm;
 }
 
@@ -32,17 +32,17 @@
 }
 
 .form__select {
-    @apply -bg--background-input -text--text-color;
+    @apply dark:-bg--background-input -bg--background-secondary/70 -text--text-color;
     @apply rounded-sm p-2;
 }
 
 h1 {
-    @apply laptop:text-[43px] text-[25px] -text--title-color text-center font-bold mb-8;
+    @apply laptop:text-[43px] text-[25px] dark:-text--title-color -text--title-color-l/80 text-center font-bold mb-8;
     font-family: 'Courier New', Courier, monospace;
 }
 
 footer {
-    @apply w-full h-[100px] bg-black/80 fixed bottom-0 -text--text-color/90;
-    @apply flex items-center justify-center;
+    @apply w-full h-[70px] shadow-md dark:bg-black/80 fixed bottom-0 -text--text-color-l dark:-text--text-color/90;
+    @apply flex items-center justify-center -bg--background-secondary/20;
 }
 
