@@ -22,7 +22,7 @@ export default function Form(){
         e.preventDefault();
     
         if(language !== "pt") {
-        setText(await handleLetterTranslatorPortuguese(text));
+            setText(await handleLetterTranslatorPortuguese(text));
         }
         setHadBadWord(await detectBadWord(text));
     }
