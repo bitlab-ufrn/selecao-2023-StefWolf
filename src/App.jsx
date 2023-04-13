@@ -6,7 +6,7 @@ function App() {
    
   return (
     <body className='body'>
-      <div className='w-[90%] laptop:mb-0 mb-7 flex justify-end'>
+      <div className='w-[90%] flex justify-end'>
         <ButtonMode />
       </div>
       <h1>Search Bad Words...</h1>

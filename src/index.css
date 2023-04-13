@@ -7,12 +7,12 @@
 
 .body {
     @apply flex flex-col items-center pt-5 h-screen ;
-    @apply w-full;
+    @apply w-full justify-between;
     @apply dark:-bg--background-color -bg--background-color-l transition-all;
 }
 
 .form {
-    @apply flex flex-col;
+    @apply flex flex-col dark:border-none border-[1px] -border--background-secondary/20;
     @apply dark:-bg--background-secondary -bg--background-secondary/20 p-8 laptop:w-[45%] w-[90%] h-[150px];
     @apply rounded-md shadow-lg;
 }
@@ -22,8 +22,8 @@
 }
 
 .form__input {
-    @apply dark:-bg--background-input/80 dark:-text--text-color border-none h-[100px] rounded-lg p-3;
-    @apply shadow-sm;
+    @apply dark:-bg--background-input/80 dark:-placeholder--text-color border-none h-[100px] rounded-lg p-3;
+    @apply shadow-sm -placeholder--text-color-l;
 }
 
 .form__button {
@@ -37,7 +37,7 @@
 }
 
 h1 {
-    @apply laptop:text-[43px] text-[25px] dark:-text--title-color -text--title-color-l/80 text-center font-bold mb-8;
+    @apply laptop:text-[43px] text-[25px] dark:-text--title-color -text--title-color-l/80 text-center font-bold;
     font-family: 'Courier New', Courier, monospace;
 }
 
