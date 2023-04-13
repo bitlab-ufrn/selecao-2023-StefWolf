@@ -42,7 +42,7 @@ h1 {
 }
 
 footer {
-    @apply w-full h-[70px] shadow-md dark:bg-black/80 fixed bottom-0 -text--text-color-l dark:-text--text-color/90;
+    @apply w-full h-[70px] shadow-md dark:bg-black/80 bottom-0 -text--text-color-l dark:-text--text-color/90;
     @apply flex items-center justify-center -bg--background-secondary/20;
 }
 
