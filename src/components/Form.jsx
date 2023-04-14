@@ -13,15 +13,15 @@ export default function Form(){
 
     translate.engine = "google"
 
-    const handleLetterTranslatorPortuguese = async function tradutor(text){
-        return await translate(text, {to: "pt"})
+    const handleLetterTranslatorEnglish = async function tradutor(text){
+        return await translate(text, { from: "pt", to: "en" })
     };
 
     async function verifyWords(e) {
         e.preventDefault();
     
-        if(language !== "pt"){
-            setHadBadWord(detectBadWord(await handleLetterTranslatorPortuguese(text)))
+        if(language === "pt"){
+            setHadBadWord(detectBadWord(await handleLetterTranslatorEnglish(text)))
         } else {
             setHadBadWord(detectBadWord(text))
         }
@@ -41,7 +41,7 @@ export default function Form(){
                 <div className='flex justify-between mt-5'>
                     <select className='form__select' id="language" name="language" onChange={(e) => setLanguage(e.target.value)}>
                         <option value="pt" selected>Português</option>
-                        <option value="">Outro Idioma</option>
+                        <option value="en">English</option>
                     </select>
                     <button className='form__button' type='submit'>Verificar</button>
                 </div>

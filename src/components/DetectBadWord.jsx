@@ -1,5 +1,4 @@
-import Piii from 'piii'
-import PiiiFilters from 'piii-filters'
+import Filter from 'bad-words';
 
 /**
  * Método que identifica se determinada frase utiliza palavras impróprias
@@ -7,11 +6,6 @@ import PiiiFilters from 'piii-filters'
  * @returns true or false
  */
 export function detectBadWord(text) {
-    const piii = new Piii({
-        filters: [
-          ...Object.values(PiiiFilters) //Container de palavras vindas da biblioteca piii-filters
-        ]
-    });
-
-    return piii.has(text)
+    let filter = new Filter()
+    return filter.isProfane(text)
 }
