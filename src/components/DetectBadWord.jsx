@@ -1,5 +1,5 @@
 import Piii from 'piii'
-import piiiFilters from 'piii-filters'
+import PiiiFilters from 'piii-filters'
 
 /**
  * Método que identifica se determinada frase utiliza palavras impróprias
@@ -9,7 +9,7 @@ import piiiFilters from 'piii-filters'
 export function detectBadWord(text) {
     const piii = new Piii({
         filters: [
-          ...Object.values(piiiFilters) //Container de palavras vindas da biblioteca piii-filters
+          ...Object.values(PiiiFilters) //Container de palavras vindas da biblioteca piii-filters
         ]
     });
 
