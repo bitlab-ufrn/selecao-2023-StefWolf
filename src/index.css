@@ -40,6 +40,10 @@
     @apply flex flex-row gap-5 ml-10 w-[20%] ;
 }
 
+.text {
+    @apply dark:-text--text-color -text--text-color-l laptop:w-[50%] w-[90%] mt-5 mb-4;
+}
+
 h1 {
     @apply laptop:text-[43px] text-[25px] flex flex-row gap-3 items-center dark:-text--title-color -text--title-color-l/80 text-center font-bold;
     font-family: 'Courier New', Courier, monospace;
