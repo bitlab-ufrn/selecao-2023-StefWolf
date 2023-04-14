@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+.body {
+    @apply flex flex-col items-center pt-5 h-screen ;
+    @apply w-full justify-between;
+    @apply dark:-bg--background-color -bg--background-color-l transition-all;
+}
+
+.form {
+    @apply flex flex-col dark:border-none border-[1px] -border--background-secondary/20;
+    @apply dark:-bg--background-secondary -bg--background-secondary/20 p-8 laptop:w-[45%] w-[90%] h-[150px];
+    @apply rounded-md shadow-lg;
+}
+
+.form__label {
+    @apply -text--text-color;
+}
+
+.form__input {
+    @apply dark:-bg--background-input/80 dark:-placeholder--text-color border-none h-[100px] rounded-lg p-3;
+    @apply shadow-sm -placeholder--text-color-l;
+}
+
+.form__button {
+    @apply -bg--background-button hover:-bg--background-button/80 -text--text-color rounded-md ;
+    @apply p-2 transition-all;
+}
+
+.form__select {
+    @apply dark:-bg--background-input -bg--background-secondary/70 -text--text-color;
+    @apply rounded-sm p-2;
+}
+
+.footer__links {
+    @apply flex flex-row gap-5 ml-10 w-[20%] ;
+}
+
+h1 {
+    @apply laptop:text-[43px] text-[25px] dark:-text--title-color -text--title-color-l/80 text-center font-bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+    @apply w-full h-[70px] text-sm laptop:text-[16px] shadow-md dark:bg-black/80 bottom-0 -text--text-color-l dark:-text--text-color/90;
+    @apply flex items-center mini-tablet:justify-center pl-2  -bg--background-secondary/20;
+}
+
+a {
+    @apply laptop:text-sm text-[12px] hover:text-black/10 -text--text-color-l/70;
+}
+
