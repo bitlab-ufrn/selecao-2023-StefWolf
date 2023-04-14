@@ -72,7 +72,28 @@ DetectBadWord:
     import Filter from 'bad-words';
 
     export function detectBadWord(text) {
-        let filter = new Filter()
-        return filter.isProfane(text)
+        return new Filter().isProfane(text)
     }
+    
+```
+
+Também, a função de tradução:
+```
+    translate.engine = "google"
+
+    const handleLetterTranslator = async function tradutor(previous, current, text){
+        return await translate(text, { from: previous, to: current })
+    };
+```
+
+Atenção: Os códigos acima vieram de inspiração das documentações:
+
+Translate: https://www.npmjs.com/package/translate#engines
+
+bad-words: https://www.npmjs.com/package/bad-words
+
+modificados e utilizados com 100% de minha autoria, isso pode ser comprovado pelos meus commits da branch issue_5, e branch issue_2. Minha tentativa com Fiii-filter anteriormente está na branch issue_1.
+
+
+
 
