@@ -6,6 +6,5 @@ import Filter from 'bad-words';
  * @returns true or false
  */
 export function detectBadWord(text) {
-    let filter = new Filter()
-    return filter.isProfane(text)
+    return new Filter().isProfane(text)
 }
