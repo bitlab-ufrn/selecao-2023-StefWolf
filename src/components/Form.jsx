@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { detectBadWord } from './DetectBadWord'
-import { BiSearchAlt } from "react-icons/bi";
 import ShowAlert from './ShowAlert';
 import translate from 'translate';
 
@@ -43,11 +42,10 @@ export default function Form(){
         <div className='w-full flex flex-col items-center justify-center'>
             <form onSubmit={verifyWords} className='form'>
 
-                <input className='form__input' 
-                    placeholder={placeholder} id='text' type='text' name='text'
-                    icon={<BiSearchAlt size={25} />} 
-                    onChange={(e) => setText(e.target.value)} 
-                    required/>
+                    <input className='form__input' 
+                        placeholder={placeholder} id='text' type='text' name='text'
+                        onChange={(e) => setText(e.target.value)} 
+                        required/>
 
                 <div className='flex justify-between mt-5'>
                     <select className='form__select' id="language" name="language" onChange={(e) => handleModifyLanguage(e.target.value)}>

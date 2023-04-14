@@ -41,7 +41,7 @@
 }
 
 h1 {
-    @apply laptop:text-[43px] text-[25px] dark:-text--title-color -text--title-color-l/80 text-center font-bold;
+    @apply laptop:text-[43px] text-[25px] flex flex-row gap-3 items-center dark:-text--title-color -text--title-color-l/80 text-center font-bold;
     font-family: 'Courier New', Courier, monospace;
 }
 
