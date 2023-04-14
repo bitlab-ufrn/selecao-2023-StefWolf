@@ -21,9 +21,9 @@ export default function Form(){
         e.preventDefault();
     
         if(language !== "pt"){
-            setHadBadWord(await detectBadWord(await handleLetterTranslatorPortuguese(text)))
+            setHadBadWord(detectBadWord(await handleLetterTranslatorPortuguese(text)))
         } else {
-            setHadBadWord(await detectBadWord(text))
+            setHadBadWord(detectBadWord(text))
         }
     }
 
