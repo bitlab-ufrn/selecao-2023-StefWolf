@@ -9,7 +9,7 @@ export default defineConfig({
       external: ['piii'],
       output: {
         globals: {
-          piii: 'Piii',
+          piii: 'piii',
         }
       }
     }
