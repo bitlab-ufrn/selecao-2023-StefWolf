@@ -34,3 +34,45 @@ Você está livre para utilizar qualquer linguagem ou ferramenta.
 1. Adicione a esse README instruções de acesso ao seu sistema
 
 ## Acesso
+
+Para acessar o sistema segue o link: https://selecao-2023-stef-wolf-mn6g.vercel.app/ que redirecionará para o sistema. 
+
+### Instruções de compilação:
+
+Caso queira baixar o código e testar em sua máquina, segue alguns passos logo abaixo:
+
+1. Baixe o projeto (git clone) ou diretamente da página
+
+2. Certifique-se de que tenha o NodeJs instalado na máquina, caso contrário, segue o link para instalá-lo: https://nodejs.org/en 
+
+3. Com o projeto aberto, instale as dependências:
+
+``` npm install ```
+
+Após instalado as dependências, para recompilar digite:
+
+``` npm run build ```
+
+E por fim, para rodar o projeto:
+
+``` npm run dev ```
+
+### Adicionais:
+
+<b>Resolução do problema:</b>
+
+Para a solução do algoritmo eu utilizei da biblioteca do javascript "bad-words", junto com a aplicação feita em react. Além disso, tive também que implementar uma biblioteca chamada translate, para o mesmo traduzir o texto que for passado no input do português para inglês.
+Isso foi feito pois bad-words não possuia suporte para o "pt-br", somente inglês, e dentre outras soluções gratuitas que encontrei como "fiii-filters", a bad-words era a mais poderosa.
+Sendo assim, aproveitei que estava com um tradutor e adicionei a condição do usuário também selecionar para escrever textos no inglês. 
+
+Segue abaixo a função onde foi implementado o identificador de palavras e passado para meu componente formulário (Form):
+
+DetectBadWord:
+```
+    import Filter from 'bad-words';
+
+    export function detectBadWord(text) {
+        let filter = new Filter()
+        return filter.isProfane(text)
+    }
+
