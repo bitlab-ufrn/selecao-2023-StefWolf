@@ -3,7 +3,6 @@ import { detectBadWord } from './DetectBadWord'
 import ShowAlert from './ShowAlert';
 import translate from 'translate';
 
-
 export default function Form(){
 
     const [text, setText] = useState("")
