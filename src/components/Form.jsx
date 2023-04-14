@@ -20,17 +20,18 @@ export default function Form(){
     async function verifyWords(e) {
         e.preventDefault();
     
-        if(language !== "pt") 
-            setText(await handleLetterTranslatorPortuguese(text))
-        
-        setHadBadWord(await detectBadWord(text))
+        if(language !== "pt"){
+            setHadBadWord(await detectBadWord(await handleLetterTranslatorPortuguese(text)))
+        } else {
+            setHadBadWord(await detectBadWord(text))
+        }
     }
 
     return(
 
         <div className='w-full flex flex-col items-center justify-center'>
             <form onSubmit={verifyWords} className='form'>
-                
+
                 <input className='form__input' 
                     placeholder="Digite o texto" id='text' type='text' name='text'
                     icon={<BiSearchAlt size={25} />} 
