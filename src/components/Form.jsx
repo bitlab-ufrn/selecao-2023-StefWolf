@@ -21,8 +21,6 @@ export default function Form(){
             setHadBadWord(detectBadWord(text))
             setListBadWords(listAllBadWords(text))
         }
-
-        debugger
     }
 
     /**
