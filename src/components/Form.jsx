@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { detectBadWord, listAllBadWords } from './DetectBadWord'
+import { detectBadWord, listAllBadWords } from '../services/DetectBadWord'
 import ShowAlert from './ShowAlert';
-import { handleWordTranslator } from './Translate';
+import { handleWordTranslator } from '../services/Translate';
 
 export default function Form(){
 
@@ -21,6 +21,8 @@ export default function Form(){
             setHadBadWord(detectBadWord(text))
             setListBadWords(listAllBadWords(text))
         }
+
+        debugger
     }
 
     /**
@@ -36,9 +38,7 @@ export default function Form(){
         setLanguage(_language)
     }
 
-    console.log(listBadWords.length)
     return(
-
         <div className='w-full flex flex-col items-center justify-center'>
             <form onSubmit={verifyWords} className='form'>
 

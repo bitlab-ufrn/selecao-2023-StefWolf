@@ -1,8 +1,6 @@
 import { Alert } from "@material-tailwind/react";
 
 export default function ShowAlert({status, amount}) {
-    console.log(amount)
-    console.log(status)
     return (
         <>
             { status === true ? 
@@ -10,7 +8,7 @@ export default function ShowAlert({status, amount}) {
                     <Alert className='-bg--error-color'>
                         <div className="w-full flex flex-row justify-between text-sm">
                             <p>Ops! Existe palavras inapropriadas!</p>
-                            <p className=" text-red-900 font-bold">
+                            <p className="text-red-900 font-bold">
                                 {amount} 
                             </p>
                         </div>

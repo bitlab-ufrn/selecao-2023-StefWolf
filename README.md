@@ -81,7 +81,7 @@ Também, a função de tradução:
 ```
     translate.engine = "google"
 
-    const handleLetterTranslator = async function tradutor(previous, current, text){
+    export async function handleWordTranslator(previous, current, text){
         return await translate(text, { from: previous, to: current })
     };
 ```
