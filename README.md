@@ -43,7 +43,7 @@ Caso queira baixar o código e testar em sua máquina, segue alguns passos logo 
 
 1. Baixe o projeto (git clone) ou diretamente da página
 
-2. Certifique-se de que tenha o NodeJs instalado na máquina, caso contrário, segue o link para instalá-lo: https://nodejs.org/en 
+2. Certifique-se de que tenha o Vite e NodeJs instalado na máquina, caso contrário, segue o link para instalá-lo: https://nodejs.org/en 
 
 3. Com o projeto aberto, instale as dependências:
 
