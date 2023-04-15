@@ -8,3 +8,14 @@ import Filter from 'bad-words';
 export function detectBadWord(text) {
     return new Filter().isProfane(text)
 }
+
+/**
+ * 
+ * @param {*Texto para verificação} text 
+ * @returns array com todas as palavras inapropriadas
+ */
+export function listAllBadWords(text) {
+    const filter = new Filter()
+    const listWords = text.split(" ")
+    return listWords.filter((word) => filter.isProfane(word))
+}

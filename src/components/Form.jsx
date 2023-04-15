@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { detectBadWord } from './DetectBadWord'
+import { detectBadWord, listAllBadWords } from './DetectBadWord'
 import ShowAlert from './ShowAlert';
-import translate from 'translate';
+import { handleWordTranslator } from './Translate';
 
 export default function Form(){
 
@@ -9,26 +9,26 @@ export default function Form(){
     const [hasBadWord, setHadBadWord] = useState()
     const [language, setLanguage] = useState("pt")
     const [placeholder, setPlaceholder] = useState("Digite seu texto aqui")
-
-    translate.engine = "google"
-
-    const handleLetterTranslator = async function tradutor(previous, current, text){
-        return await translate(text, { from: previous, to: current })
-    };
+    const [listBadWords, setListBadWords] = useState([])
 
     async function verifyWords(e) {
         e.preventDefault();
     
         if(language != "en"){
-            setHadBadWord(detectBadWord(await handleLetterTranslator(language, "en", text)))
+            setHadBadWord(detectBadWord(await handleWordTranslator(language, "en", text)))
+            setListBadWords(listAllBadWords(await handleWordTranslator(language, "en", text)))
         } else {
             setHadBadWord(detectBadWord(text))
+            setListBadWords(listAllBadWords(text))
         }
     }
 
+    /**
+     * Quando modificar a linguagem, o placeholder também modificará
+     */
     async function handleModifyLanguage(_language){
         if(_language != "pt")
-            setPlaceholder(await handleLetterTranslator("pt", _language, placeholder))
+            setPlaceholder(await handleWordTranslator("pt", _language, placeholder))
 
         if(_language === "pt")
             setPlaceholder("Digite seu texto aqui")
@@ -36,6 +36,7 @@ export default function Form(){
         setLanguage(_language)
     }
 
+    console.log(listBadWords.length)
     return(
 
         <div className='w-full flex flex-col items-center justify-center'>
@@ -56,8 +57,8 @@ export default function Form(){
                 </div>
             </form>
 
-            <div className='laptop:w-[44%] w-[90%] mt-12'>
-                <ShowAlert status={hasBadWord} />
+            <div className='laptop:w-[44%] w-[90%] mt-12'>     
+                <ShowAlert status={hasBadWord} amount={listBadWords.length} />
             </div>
         </div>
     )
