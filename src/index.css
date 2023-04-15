@@ -23,7 +23,7 @@
 
 .form__input {
     @apply dark:-bg--background-input/80 dark:-placeholder--text-color border-none h-[100px] rounded-lg p-3;
-    @apply shadow-sm -placeholder--text-color-l;
+    @apply shadow-sm -placeholder--text-color-l dark:-text--text-color;
 }
 
 .form__button {

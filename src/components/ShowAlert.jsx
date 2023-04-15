@@ -1,14 +1,23 @@
 import { Alert } from "@material-tailwind/react";
 
-export default function ShowAlert(status) {
+export default function ShowAlert({status, amount}) {
     return (
         <>
-            { status.status === true ? 
+            { status === true ? 
                 <span>
-                    <Alert className='-bg--error-color'>Tem palavras impróprias</Alert>
+                    <Alert className='-bg--error-color'>
+                        <div className="w-full flex flex-row justify-between text-sm">
+                            <p>Ops! Existe palavras inapropriadas!</p>
+                            <p className="text-red-900 font-bold">
+                                {amount} 
+                            </p>
+                        </div>
+                    </Alert>
                 </span>
-            : status.status === false ? <span>
-                    <Alert className=' -bg--sucess-color'>Tudo certo!</Alert>
+            : status === false ? <span>
+                    <Alert className=' -bg--sucess-color'>
+                        Tudo certo!
+                    </Alert>
                 </span> : 
                 <></>
             }
